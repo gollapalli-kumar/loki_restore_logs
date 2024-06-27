@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loki Logs Restore</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Loki Logs Restore</h1>
+    <form method="POST">
+        <label for="input_date">Enter the date (DD/MM/YYYY):</label>
+        <input type="text" id="input_date" name="input_date" required>
+
+        <label for="app_name">Enter the app name to search for:</label>
+        <input type="text" id="app_name" name="app_name" required>
+
+        <label for="days">Enter the number of days to restore the objects for:</label>
+        <input type="number" id="days" name="days" required>
+
+        <label for="use_time_range">Do you want to specify a time range?</label>
+        <input type="radio" id="yes" name="use_time_range" value="yes" checked> Yes
+        <input type="radio" id="no" name="use_time_range" value="no"> No
+
+        <div id="time_range_inputs">
+            <label for="start_range">Enter start time (e.g., 11:00AM):</label>
+            <input type="text" id="start_range" name="start_range">
+
+            <label for="end_range">Enter end time (e.g., 3:00PM):</label>
+            <input type="text" id="end_range" name="end_range">
+        </div>
+
+        <label for="bucket_choice">Select the bucket name:</label>
+        <select id="bucket_choice" name="bucket_choice" required>
+            <option value="1">Infra-Testing</option>
+            <option value="2">Nightly</option>
+            <option value="3">Staging</option>
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function toggleTimeRangeInputs() {
+            const useTimeRange = document.querySelector('input[name="use_time_range"]:checked').value;
+            const timeRangeInputs = document.getElementById("time_range_inputs");
+            if (useTimeRange === "yes") {
+                timeRangeInputs.style.display = "block";
+            } else {
+                timeRangeInputs.style.display = "none";
+            }
+        }
+
+        toggleTimeRangeInputs();
+
+        document.querySelectorAll('input[name="use_time_range"]').forEach((elem) => {
+            elem.addEventListener("change", toggleTimeRangeInputs);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restorated Logs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Custom style for this specific page */
+        .restoration-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .restoration-container h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #141111;
+            color: white;
+            margin: 0;
+        }
+
+        .restoration-container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .restoration-container li {
+            background-color: #f9f9f9;
+            margin: 5px auto;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        h2 {
+            text-align: center;
+            padding: 5px;
+            background-color: #008000;
+            color: white;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="restoration-container">
+        <h1>Restored Logs</h1>
+        <ul>
+            {% for message in restore_messages %}
+                <li>{{ message|safe }}</li>
+            {% endfor %}
+        </ul>
+        <h2>Restored all logs Successfully</h2>
+    </div>
+</body>
+</html>

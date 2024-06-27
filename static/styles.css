@@ -1,0 +1,98 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: #141111;
+    color: white;
+    margin: 0;
+}
+
+form {
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #008000;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #00b318;
+}
+
+.results {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.results h2 {
+    margin-top: 0;
+}
+
+.results ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.results li {
+    background-color: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Styles for download status */
+.download-status {
+    list-style-type: none;  /* Remove default bullets */
+    padding: 0;  /* Remove default padding */
+    margin: 0;  /* Remove default margin */
+}
+
+.download-status li {
+    background-color: #e3f2fd;  /* Light blue background */
+    border: 1px solid #90caf9;  /* Light blue border */
+    padding: 10px;  /* Padding inside the list item */
+    margin-bottom: 5px;  /* Space between list items */
+    border-radius: 4px;  /* Rounded corners */
+    color: #0d47a1;  /* Dark blue text */
+    font-weight: bold;  /* Bold text */
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1> Loki Log Results</h1>
+    <div class="results">
+        <h2>Download Status</h2>
+        <ul class="download-status">
+            <li>{{ download_status|safe }}</li>
+        </ul>
+        
+        <h2>Search Results</h2>
+        <form method="POST" action="{{ url_for('restore') }}">
+            <input type="hidden" name="bucket_name" value="{{ bucket_name }}">
+            <input type="hidden" name="days" value="{{ days }}">
+            {% for app_id, results in results %}
+                <h3>App ID: {{ app_id }}</h3>
+                {% if results %}
+                    <ul>
+                        {% for result in results %}
+                            <li>
+                                {{ result }}
+                                <input type="hidden" name="app_id" value="{{ app_id }}">
+                                <input type="hidden" name="restore_key" value="{{ result }}">
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No results found for this App ID within the specified time range.</p>
+                {% endif %}
+            {% endfor %}
+            <p>Total number of results within the time range: {{ total_count }}</p>
+            <input type="submit" value="Restore Logs">
+        </form>
+    </div>
+</body>
+</html>
