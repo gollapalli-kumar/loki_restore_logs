@@ -12,15 +12,19 @@ Use session Token for temporary
 
 aws sts get-session-token --serial-number "arn-mfa" --token-code 000000 (Change MFA Token)
 
-export AWS_ACCESS_KEY_ID=
-export AWS_SECRET_ACCESS_KEY=
-export AWS_SESSION_TOKEN=
+export AWS_ACCESS_KEY_ID=     
+
+export AWS_SECRET_ACCESS_KEY=     
+
+export AWS_SESSION_TOKEN=      
 
 After Expiry of Session token 
 
-unset AWS_ACCESS_KEY_ID
-unset AWS_SECRET_ACCESS_KEY
-unset AWS_SESSION_TOKEN
+unset AWS_ACCESS_KEY_ID     
+
+unset AWS_SECRET_ACCESS_KEY    
+
+unset AWS_SESSION_TOKEN     
 
 python3 app.py
 
