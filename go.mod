@@ -10,7 +10,9 @@ require (
 	github.com/prometheus/common v0.54.0
 	github.com/prometheus/prometheus v0.52.1
 )
+*/
 
+/*
 require (
 	cloud.google.com/go v0.112.0 // indirect
 	cloud.google.com/go/auth v0.2.0 // indirect
@@ -258,10 +260,8 @@ require (
 	k8s.io/utils v0.0.0-20230726121419-3b25d923346b // indirect
 	rsc.io/binaryregexp v0.2.0 // indirect
 )
-
-replace github.com/gocql/gocql => github.com/grafana/gocql v0.0.0-20200605141915-ba5dc39ece85
-
-replace github.com/prometheus/prometheus => github.com/prometheus/prometheus v0.51.0
-
-
 */
+
+// replace github.com/gocql/gocql => github.com/grafana/gocql v0.0.0-20200605141915-ba5dc39ece85
+
+// replace github.com/prometheus/prometheus => github.com/prometheus/prometheus v0.51.0
