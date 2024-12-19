@@ -1,3 +1,4 @@
+/*
 module github.com/grafana/loki
 
 go 1.22.2
@@ -260,3 +261,6 @@ require (
 replace github.com/gocql/gocql => github.com/grafana/gocql v0.0.0-20200605141915-ba5dc39ece85
 
 replace github.com/prometheus/prometheus => github.com/prometheus/prometheus v0.51.0
+
+
+*/
